@@ -5,7 +5,10 @@ export async function main(denops: Denops): Promise<void> {
   const city = await fetch('https://ipinfo.io/city');
   const city_text = await city.text();
   denops.dispatcher = {
-    async c() { await fetch('http://wttr.in/'.concat(city_text, '?format=%c'))},
+    foo() {
+      return Promise.resolve("foo");
+    },
+    async c() { await fetch('http://wttr.in/'.concat("Tokyo", '?format=%c'))},
     async m() { await fetch('http://wttr.in/'.concat(city_text, '?format=%m'))},
     async f() { await fetch('http://wttr.in/'.concat(city_text, '?format=%f'))},
     async w() { await fetch('http://wttr.in/'.concat(city_text, '?format=%w'))},
