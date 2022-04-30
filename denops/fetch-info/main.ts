@@ -8,10 +8,18 @@ export async function main(denops: Denops): Promise<void> {
     foo() {
       return Promise.resolve("foo");
     },
-    async c() { await fetch('http://wttr.in/'.concat("Tokyo", '?format=%c'))},
-    async m() { await fetch('http://wttr.in/'.concat(city_text, '?format=%m'))},
-    async f() { await fetch('http://wttr.in/'.concat(city_text, '?format=%f'))},
-    async w() { await fetch('http://wttr.in/'.concat(city_text, '?format=%w'))},
+    async c() { const tmp = await fetch('http://wttr.in/'.concat("Tokyo", '?format=%c'))
+      return await tmp.text();
+    },
+    async m() { const tmp = await fetch('http://wttr.in/'.concat(city_text, '?format=%m'))
+      return await tmp.text();
+    },
+    async f() { const tmp = await fetch('http://wttr.in/'.concat(city_text, '?format=%f'))
+      return await tmp.text();
+    },
+    async w() {const tmp =  await fetch('http://wttr.in/'.concat(city_text, '?format=%w'))
+      return await tmp.text();
+    },
   }
 };
 
