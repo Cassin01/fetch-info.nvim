@@ -8,7 +8,7 @@ let g:loaded_hellobeautifulworld = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! Meao()
+function! fetchinfo#meao()
     echom "Meao!"
 endfunction
 
