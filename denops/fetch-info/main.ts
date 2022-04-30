@@ -8,7 +8,7 @@ export async function main(denops: Denops): Promise<void> {
     foo() {
       return Promise.resolve("foo");
     },
-    async c() { const tmp = await fetch('http://wttr.in/'.concat("Tokyo", '?format=%c'))
+    async c() { const tmp = await fetch('http://wttr.in/'.concat(city_text, '?format=%c'))
       return await tmp.text();
     },
     async m() { const tmp = await fetch('http://wttr.in/'.concat(city_text, '?format=%m'))
@@ -20,11 +20,21 @@ export async function main(denops: Denops): Promise<void> {
     async w() {const tmp =  await fetch('http://wttr.in/'.concat(city_text, '?format=%w'))
       return await tmp.text();
     },
+    async showinfo(text: unknown) {
+      await denops.cmd("echomsg text", {
+        text,
+      });
+    },
   }
+  const n = denops.name;
+  await denops.cmd(
+      `command! GInfoF call denops#notify("${n}", "world", [deonps#request("${n}", "hello", [])])`
+  );
 };
 
 /**
   * INFO
-* call denops#notify("fetch-info", "f", [])
+* call denops#request("fetch-info", "f", [])
+* call denops#notify("fetch-info")
 * lua print(vim.inspect(vim.api.nvim_exec([[call denops#request_async("fetch-info", "wttr", [], )]], true)))
 */
