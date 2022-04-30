@@ -17,7 +17,7 @@ import { Denops } from "https://deno.land/x/denops_std@v2.0.0/mod.ts";
       return {c: c, m: m, f: f, w: w};
     }
   }
-  await denops.cmd(`function! Meow() echom "Meow! endfunction"`);
+  // await denops.cmd(`function! Meow() echom "Meow! endfunction"`);
 };
 
 /**
