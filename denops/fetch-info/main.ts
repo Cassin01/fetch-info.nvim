@@ -28,7 +28,7 @@ export async function main(denops: Denops): Promise<void> {
   }
   const n = denops.name;
   await denops.cmd(
-      `command! GInfoF call denops#notify("${n}", "world", [deonps#request("${n}", "hello", [])])`
+      `command! GInfoF call denops#notify("${n}", "showinfo", [deonps#request("${n}", "w", [])])`
   );
 };
 
