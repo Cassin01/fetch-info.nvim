@@ -27,11 +27,20 @@ export async function main(denops: Denops): Promise<void> {
     },
   }
   const n = denops.name;
+  // await denops.cmd(
+  //     `command! GInfoF call denops#notify("${n}", "showinfo", [denops#request("${n}", "w", [])])`
+  // );
   await denops.cmd(
-      `command! GInfoF call denops#notify("${n}", "showinfo", [denops#request("${n}", "w", [])])`
+      `command! GInfoC echom denops#request("${n}", "c", [])`
   );
   await denops.cmd(
-      `command! GInfoM echom denops#request("${n}", "m", [])`
+      `command! GInfoj echom denops#request("${n}", "m", [])`
+  );
+  await denops.cmd(
+      `command! GInfoF echom denops#request("${n}", "f", [])`
+  );
+  await denops.cmd(
+      `command! GInfoW echom denops#request("${n}", "w", [])`
   );
 };
 
