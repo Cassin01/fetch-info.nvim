@@ -30,6 +30,9 @@ export async function main(denops: Denops): Promise<void> {
   await denops.cmd(
       `command! GInfoF call denops#notify("${n}", "showinfo", [denops#request("${n}", "w", [])])`
   );
+  await denops.cmd(
+      `command! GInfoM echom denops#request("${n}", "m", [])`
+  );
 };
 
 /**
