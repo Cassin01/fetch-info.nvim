@@ -34,7 +34,7 @@ export async function main(denops: Denops): Promise<void> {
       `command! GInfoC echom denops#request("${n}", "c", [])`
   );
   await denops.cmd(
-      `command! GInfoj echom denops#request("${n}", "m", [])`
+      `command! GInfoJ echom denops#request("${n}", "m", [])`
   );
   await denops.cmd(
       `command! GInfoF echom denops#request("${n}", "f", [])`
